@@ -1,0 +1,20 @@
+club,total,n,is_club
+Timor-Leste,26.82667,1,False
+Micronesia,268.91998,1,False
+Haiti,2806.6667,1,False
+Yemen,29000.002,1,False
+Madagascar,31853.055,1,False
+Central America,47634.945,2,True
+Bolivia,51491.54,1,False
+Tunisia,54981.348,1,False
+Sri Lanka,70421.91,1,False
+Southern Africa,82547.284,6,True
+Philippines,92836.83,1,False
+Morocco,115471.94,1,False
+Central Asia,124013.5123,3,True
+East Africa (EAC+DRC),189428.3714,6,True
+Nile,201568.73500000002,2,True
+Levant,239473.063,4,True
+West & Sahel,439925.34495,14,True
+Southeast Asia,960685.7354,4,True
+South Asia,2583679.705,6,True
