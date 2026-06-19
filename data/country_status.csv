@@ -1,0 +1,58 @@
+country,iso3,year_cardata,lead_t,ulab_t,band,status
+Timor-Leste,TLS,2018.0,17.437334,26.82667,below modular floor (export),stuck
+"Micronesia, Fed Sts",FSM,2020.0,174.79799,268.91998,below modular floor (export),stuck
+Chad,TCD,2022.0,583.1194,897.10675,below modular floor (export),export
+Cambodia,KHM,,801.6667,1233.3334,below modular floor (export),export
+Mauritania,MRT,,910.0,1400.0,below modular floor (export),export
+Bhutan,BTN,2023.0,1505.9199,2316.8,below modular floor (export),export
+Haiti,HTI,,1824.3334,2806.6667,below modular floor (export),stuck
+Benin,BEN,2022.0,2263.3174,3482.0269,below modular floor (export),export
+Burundi,BDI,2019.0,2354.3086,3622.0134,below modular floor (export),export
+Togo,TGO,2022.0,2757.1355,4241.747,below modular floor (export),export
+Rwanda,RWA,2023.0,3322.0198,5110.8,below modular floor (export),export
+Malawi,MWI,,3813.3333,5866.667,below modular floor (export),export
+Mali,MLI,2022.0,4413.682,6790.2803,below modular floor (export),export
+Tajikistan,TJK,2023.0,5087.9746,7827.6533,below modular floor (export),export
+Nepal,NPL,,5481.6665,8433.333,below modular floor (export),export
+Zambia,ZMB,,5683.1665,8743.333,below modular floor (export),export
+Angola,AGO,,6760.0,10400.0,below modular floor (export),export
+Guinea,GIN,2020.0,7576.1743,11655.653,below modular floor (export),export
+West Bank and Gaza,PSE,,7629.83,11738.2,below modular floor (export),export
+Niger,NER,2023.0,8095.715,12454.946,uncertain middle (12k-50k),home_mod
+Namibia,NAM,2023.0,10076.196,15501.841,uncertain middle (12k-50k),home_mod
+Cameroon,CMR,,10912.59,16788.6,uncertain middle (12k-50k),home_mod
+Liberia,LBR,,10929.316,16814.334,uncertain middle (12k-50k),home_mod
+Honduras,HND,2023.0,11494.2,17683.385,uncertain middle (12k-50k),home_mod
+Mozambique,MOZ,2023.0,12085.034,18592.361,uncertain middle (12k-50k),home_mod
+Sudan,SDN,,13075.747,20116.535,uncertain middle (12k-50k),home_mod
+Burkina Faso,BFA,2023.0,13360.333,20554.36,uncertain middle (12k-50k),home_mod
+Tanzania,TZA,2018.0,14321.555,22033.162,uncertain middle (12k-50k),home_mod
+Zimbabwe,ZWE,2022.0,15238.003,23443.082,uncertain middle (12k-50k),home_mod
+Jordan,JOR,2023.0,18715.867,28793.643,uncertain middle (12k-50k),home_mod
+"Yemen, Rep",YEM,,18850.0,29000.002,uncertain middle (12k-50k),home_mod
+Senegal,SEN,2018.0,18872.23,29034.201,uncertain middle (12k-50k),home_mod
+Nicaragua,NIC,2022.0,19468.514,29951.56,uncertain middle (12k-50k),home_mod
+Madagascar,MDG,,20704.484,31853.055,uncertain middle (12k-50k),home_mod
+Lebanon,LBN,2022.0,22124.666,34037.95,uncertain middle (12k-50k),home_mod
+Myanmar,MMR,2023.0,25011.133,38478.668,uncertain middle (12k-50k),home_mod
+Cote d'Ivoire,CIV,,26741.32,41140.496,uncertain middle (12k-50k),home_mod
+Lao PDR,LAO,2023.0,27329.205,42044.934,uncertain middle (12k-50k),home_mod
+Uganda,UGA,,27906.338,42932.83,uncertain middle (12k-50k),home_mod
+Ghana,GHA,,31156.172,47932.574,uncertain middle (12k-50k),home_mod
+Kyrgyz Republic,KGZ,2023.0,31835.389,48977.523,uncertain middle (12k-50k),home_mod
+Bolivia,BOL,2023.0,33469.5,51491.54,above export line (domestic plausible),home_conv
+Afghanistan,AFG,2023.0,34029.77,52353.492,above export line (domestic plausible),home_conv
+"Congo, Dem Rep",COD,,35724.0,54960.004,above export line (domestic plausible),home_conv
+Tunisia,TUN,,35737.875,54981.348,above export line (domestic plausible),home_conv
+Kenya,KEN,2023.0,39500.215,60769.562,above export line (domestic plausible),home_conv
+Uzbekistan,UZB,2023.0,43685.418,67208.336,above export line (domestic plausible),home_conv
+Sri Lanka,LKA,2023.0,45774.24,70421.91,above export line (domestic plausible),home_conv
+Philippines,PHL,2023.0,60343.938,92836.83,above export line (domestic plausible),home_conv
+Morocco,MAR,2023.0,75056.76,115471.94,above export line (domestic plausible),home_conv
+Pakistan,PAK,2023.0,102289.56,157368.56,above export line (domestic plausible),home_conv
+Syrian Arab Republic,SYR,,107187.12,164903.27,above export line (domestic plausible),home_conv
+"Egypt, Arab Rep",EGY,2023.0,117943.93,181452.2,above export line (domestic plausible),home_conv
+Nigeria,NGA,,147380.36,226739.02,above export line (domestic plausible),home_conv
+Bangladesh,BGD,2022.0,183296.17,281994.12,above export line (domestic plausible),home_conv
+Vietnam,VNM,,571303.7,878928.8,above export line (domestic plausible),home_conv
+India,IND,2022.0,1352788.6,2081213.4,above export line (domestic plausible),home_conv
