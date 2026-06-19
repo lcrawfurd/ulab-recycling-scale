@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Used lead-acid battery recycling: which countries can reach safe scale?</title>
+<style>
+  :root { --ink:#1a1a1a; --muted:#666; --rule:#e5e5e5; }
+  body { font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+         color: var(--ink); margin: 0; background:#fff; }
+  main { max-width: 860px; margin: 0 auto; padding: 48px 20px 80px; }
+  h1 { font-size: 1.7rem; line-height: 1.25; margin: 0 0 .3em; }
+  .status { display:inline-block; font-size:.8rem; color:var(--muted); border:1px solid var(--rule);
+            border-radius:4px; padding:2px 8px; margin-bottom:1.4em; }
+  h2 { font-size: 1.15rem; margin: 2.2em 0 .4em; }
+  p.lead { font-size: 1.05rem; color:#333; }
+  figure { margin: 0 0 .6em; }
+  img { width: 100%; height: auto; border: 1px solid var(--rule); border-radius:6px; }
+  figcaption { font-size: .85rem; color: var(--muted); margin-top: .5em; }
+  footer { margin-top: 3em; padding-top: 1.2em; border-top: 1px solid var(--rule); font-size: .82rem; color: var(--muted); }
+  a { color:#1f6feb; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Which countries could safely recycle their own used lead-acid batteries?</h1>
+  <span class="status">Preliminary working figures · draft, subject to change</span>
+
+  <p class="lead">Safe lead-acid battery recycling only pays at scale. These first-pass figures estimate how much used battery (ULAB) volume each low- and middle-income country generates a year, and compare it with the scale a safe recycling plant needs &mdash; then ask which sub-threshold countries could reach that scale by pooling regionally.</p>
+
+  <h2>1. Most countries are too small on their own</h2>
+  <figure>
+    <img src="fig1_volume_vs_threshold.png" alt="Ranked dot plot of ULAB volume by country vs threshold band">
+    <figcaption>Estimated annual ULAB volume (whole-battery tonnes, log scale) for 57 low- and middle-income countries, against the scale at which safe recycling becomes viable. Of the 57, 19 fall below the modular-plant floor (~12k t/yr), 22 sit in the uncertain 12&ndash;50k band, and 16 clear the 50k line.</figcaption>
+  </figure>
+
+  <h2>2. But pooling regionally reaches scale almost everywhere</h2>
+  <figure>
+    <img src="fig2_regional_clubs.png" alt="Pooled regional ULAB volume vs threshold band">
+    <figcaption>Pooled ULAB volume by region. Every region except the Pacific clears not just break-even (24k) but the full 50k export line. 18 of the 19 individually-below-floor countries sit in a region whose combined volume would support a safe facility.</figcaption>
+  </figure>
+
+  <h2>3. The viability map</h2>
+  <figure>
+    <img src="fig3_map.png" alt="World map of countries coloured by recycling viability band">
+    <figcaption>Countries shaded by whether their own volume could plausibly support safe domestic recycling. The too-small (blue) and borderline (red) countries cluster geographically &mdash; usually next to a larger regional anchor.</figcaption>
+  </figure>
+
+  <h2>4. Proposed regional &ldquo;clubs&rdquo;</h2>
+  <figure>
+    <img src="fig4_map_clubs.png" alt="World map of proposed regional recycling clubs">
+    <figcaption>A first-pass geographic grouping into regional catchments, each labelled with its pooled volume. Grouping is plain geography for now &mdash; it could instead follow ECOWAS/EAC/SADC blocs or be weighted by transport distance.</figcaption>
+  </figure>
+
+  <footer>
+    Volume estimates from the vehicle-demand model in Crawfurd, Mitchell &amp; Hu (2026), &ldquo;Beyond hotspots: estimating population lead exposure from battery recycling&rdquo;, <em>Environmental Pollution</em>. Safe-recycling scale thresholds from the USAID / Dalberg <em>ULAB Recycling Assessment</em> (2024) and a modular plant installed in C&ocirc;te d&rsquo;Ivoire (2024). Figures are exploratory and may change.
+  </footer>
+</main>
+</body>
+</html>
