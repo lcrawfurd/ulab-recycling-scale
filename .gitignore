@@ -1,0 +1,4 @@
+*.dta
+data/geo/
+__pycache__/
+*.pyc
