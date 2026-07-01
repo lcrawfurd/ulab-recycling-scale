@@ -20,6 +20,15 @@
   figcaption { font-size: .85rem; color: var(--muted); margin-top: .5em; }
   footer { margin-top: 3em; padding-top: 1.2em; border-top: 1px solid var(--rule); font-size: .82rem; color: var(--muted); }
   a { color:#1f6feb; }
+  details { margin: 1.8em 0 0; border-top: 1px solid var(--rule); padding-top: 1.1em; }
+  summary { cursor: pointer; font-size: 1.1rem; font-weight: 500; }
+  .eq { background:#f6f6f4; border:1px solid var(--rule); border-radius:6px; padding:.8em 1em; margin:.9em 0; font-family: ui-monospace, Menlo, Consolas, monospace; font-size:.9rem; line-height:2; overflow-x:auto; }
+  .mut { color: var(--muted); font-size:.9rem; }
+  table.params, table.data { border-collapse: collapse; width:100%; font-size:.85rem; margin:.7em 0; }
+  table.params td, table.params th, table.data td, table.data th { border-bottom:1px solid var(--rule); padding:5px 9px; text-align:left; }
+  table.params th, table.data th { color:var(--muted); font-weight:500; }
+  td.n, th.n { text-align:right; font-variant-numeric: tabular-nums; }
+  .scroll { max-height: 380px; overflow-y:auto; border:1px solid var(--rule); border-radius:6px; margin:.6em 0; }
 </style>
 </head>
 <body>
@@ -40,6 +49,94 @@
     <img src="fig6_status_map.png" alt="World map: recycle at home, export to a neighbour, or stuck">
     <figcaption>With conventional plants only 16 countries generate enough to recycle at home (dark green). Modular kit, viable from about 12,000 t/yr, more than doubles that to 38 (adding the light-green tier). The remaining small countries (blue) each border a bigger one they could export to; only three small islands &mdash; Haiti, Micronesia and Timor-Leste &mdash; have no viable option. This is a volume judgement only: it does not account for governance, conflict or transport cost, which can block safe recycling even where the volume clears.</figcaption>
   </figure>
+
+  <details>
+    <summary>Methods — how the volume estimate is built</summary>
+    <p class="mut">Annual used lead-acid battery (ULAB) volume is estimated bottom-up from each country&rsquo;s vehicle fleet, following the vehicle-demand model in Crawfurd, Mitchell &amp; Hu (2026). For each vehicle type, the lead entering the waste stream per vehicle each year is:</p>
+    <div class="eq">lead per vehicle-year (kg)&nbsp; = &nbsp;w &times; n &times; c &divide; s</div>
+    <p class="mut">where w = battery weight (kg), n = batteries per vehicle, c = lead content by weight (0.65), and s = battery service life (years). The five vehicle types and the lead each puts into the waste stream per year:</p>
+    <table class="params">
+      <tr><th>Vehicle type</th><th class="n">Battery wt (kg)</th><th class="n">Batteries</th><th class="n">Life (yr)</th><th class="n">Lead/yr (kg)</th></tr>
+      <tr><td>Passenger car</td><td class="n">20</td><td class="n">1</td><td class="n">2</td><td class="n">6.5</td></tr>
+      <tr><td>Commercial vehicle</td><td class="n">50</td><td class="n">2</td><td class="n">2</td><td class="n">32.5</td></tr>
+      <tr><td>Motorcycle</td><td class="n">5</td><td class="n">1</td><td class="n">2</td><td class="n">1.6</td></tr>
+      <tr><td>Electric two-wheeler</td><td class="n">40</td><td class="n">1</td><td class="n">1</td><td class="n">26</td></tr>
+      <tr><td>Electric three-wheeler</td><td class="n">30</td><td class="n">4</td><td class="n">1</td><td class="n">78</td></tr>
+    </table>
+    <p class="mut">National generation sums across the fleet, grosses up for non-vehicle (solar, telecom, standby) batteries, then converts lead back to whole-battery weight:</p>
+    <div class="eq">total lead (t/yr)&nbsp; = &nbsp;( &Sigma;<sub>type</sub> fleet<sub>type</sub> &times; lead-per-vehicle-year ) &divide; 1000 &divide; &phi;<br>ULAB (t/yr, whole batteries)&nbsp; = &nbsp;total lead &divide; c</div>
+    <p class="mut">&phi; = vehicle share of all lead-acid batteries (0.75), so dividing by it adds the ~25% non-vehicle share; c = 0.65. Fleet data from WHO, IRF, OICA and electric two/three-wheeler sources.</p>
+    <p class="mut"><b>Scale thresholds</b> (whole-battery t/yr): modular-plant floor 12,000 (Engitec, C&ocirc;te d&rsquo;Ivoire); conventional break-even 24,000 and the export-vs-recycle line 50,000 (Dalberg/USAID, 2024).</p>
+    <p class="mut"><b>What each country should do</b>: recycle at home &mdash; conventional if ULAB &ge; 50,000, modular if 12,000&ndash;50,000; if below 12,000, export to a bordering country that itself clears 12,000; otherwise stuck. Adjacency is from shared land borders.</p>
+  </details>
+  <details>
+    <summary>Per-country data (57 countries)</summary>
+    <div class="scroll">
+      <table class="data">
+        <thead><tr><th>Country</th><th class="n">ULAB t/yr</th><th>What it should do</th></tr></thead>
+        <tbody>
+          <tr><td>India</td><td class="n">2,081,213</td><td>Recycle at home — conventional (≥50k)</td></tr>
+          <tr><td>Vietnam</td><td class="n">878,929</td><td>Recycle at home — conventional (≥50k)</td></tr>
+          <tr><td>Bangladesh</td><td class="n">281,994</td><td>Recycle at home — conventional (≥50k)</td></tr>
+          <tr><td>Nigeria</td><td class="n">226,739</td><td>Recycle at home — conventional (≥50k)</td></tr>
+          <tr><td>Egypt, Arab Rep</td><td class="n">181,452</td><td>Recycle at home — conventional (≥50k)</td></tr>
+          <tr><td>Syrian Arab Republic</td><td class="n">164,903</td><td>Recycle at home — conventional (≥50k)</td></tr>
+          <tr><td>Pakistan</td><td class="n">157,369</td><td>Recycle at home — conventional (≥50k)</td></tr>
+          <tr><td>Morocco</td><td class="n">115,472</td><td>Recycle at home — conventional (≥50k)</td></tr>
+          <tr><td>Philippines</td><td class="n">92,837</td><td>Recycle at home — conventional (≥50k)</td></tr>
+          <tr><td>Sri Lanka</td><td class="n">70,422</td><td>Recycle at home — conventional (≥50k)</td></tr>
+          <tr><td>Uzbekistan</td><td class="n">67,208</td><td>Recycle at home — conventional (≥50k)</td></tr>
+          <tr><td>Kenya</td><td class="n">60,770</td><td>Recycle at home — conventional (≥50k)</td></tr>
+          <tr><td>Tunisia</td><td class="n">54,981</td><td>Recycle at home — conventional (≥50k)</td></tr>
+          <tr><td>Congo, Dem Rep</td><td class="n">54,960</td><td>Recycle at home — conventional (≥50k)</td></tr>
+          <tr><td>Afghanistan</td><td class="n">52,353</td><td>Recycle at home — conventional (≥50k)</td></tr>
+          <tr><td>Bolivia</td><td class="n">51,492</td><td>Recycle at home — conventional (≥50k)</td></tr>
+          <tr><td>Kyrgyz Republic</td><td class="n">48,978</td><td>Recycle at home — modular (12–50k)</td></tr>
+          <tr><td>Ghana</td><td class="n">47,933</td><td>Recycle at home — modular (12–50k)</td></tr>
+          <tr><td>Uganda</td><td class="n">42,933</td><td>Recycle at home — modular (12–50k)</td></tr>
+          <tr><td>Lao PDR</td><td class="n">42,045</td><td>Recycle at home — modular (12–50k)</td></tr>
+          <tr><td>Cote d'Ivoire</td><td class="n">41,140</td><td>Recycle at home — modular (12–50k)</td></tr>
+          <tr><td>Myanmar</td><td class="n">38,479</td><td>Recycle at home — modular (12–50k)</td></tr>
+          <tr><td>Lebanon</td><td class="n">34,038</td><td>Recycle at home — modular (12–50k)</td></tr>
+          <tr><td>Madagascar</td><td class="n">31,853</td><td>Recycle at home — modular (12–50k)</td></tr>
+          <tr><td>Nicaragua</td><td class="n">29,952</td><td>Recycle at home — modular (12–50k)</td></tr>
+          <tr><td>Senegal</td><td class="n">29,034</td><td>Recycle at home — modular (12–50k)</td></tr>
+          <tr><td>Yemen, Rep</td><td class="n">29,000</td><td>Recycle at home — modular (12–50k)</td></tr>
+          <tr><td>Jordan</td><td class="n">28,794</td><td>Recycle at home — modular (12–50k)</td></tr>
+          <tr><td>Zimbabwe</td><td class="n">23,443</td><td>Recycle at home — modular (12–50k)</td></tr>
+          <tr><td>Tanzania</td><td class="n">22,033</td><td>Recycle at home — modular (12–50k)</td></tr>
+          <tr><td>Burkina Faso</td><td class="n">20,554</td><td>Recycle at home — modular (12–50k)</td></tr>
+          <tr><td>Sudan</td><td class="n">20,117</td><td>Recycle at home — modular (12–50k)</td></tr>
+          <tr><td>Mozambique</td><td class="n">18,592</td><td>Recycle at home — modular (12–50k)</td></tr>
+          <tr><td>Honduras</td><td class="n">17,683</td><td>Recycle at home — modular (12–50k)</td></tr>
+          <tr><td>Liberia</td><td class="n">16,814</td><td>Recycle at home — modular (12–50k)</td></tr>
+          <tr><td>Cameroon</td><td class="n">16,789</td><td>Recycle at home — modular (12–50k)</td></tr>
+          <tr><td>Namibia</td><td class="n">15,502</td><td>Recycle at home — modular (12–50k)</td></tr>
+          <tr><td>Niger</td><td class="n">12,455</td><td>Recycle at home — modular (12–50k)</td></tr>
+          <tr><td>West Bank and Gaza</td><td class="n">11,738</td><td>Export to a bigger neighbour (&lt;12k)</td></tr>
+          <tr><td>Guinea</td><td class="n">11,656</td><td>Export to a bigger neighbour (&lt;12k)</td></tr>
+          <tr><td>Angola</td><td class="n">10,400</td><td>Export to a bigger neighbour (&lt;12k)</td></tr>
+          <tr><td>Zambia</td><td class="n">8,743</td><td>Export to a bigger neighbour (&lt;12k)</td></tr>
+          <tr><td>Nepal</td><td class="n">8,433</td><td>Export to a bigger neighbour (&lt;12k)</td></tr>
+          <tr><td>Tajikistan</td><td class="n">7,828</td><td>Export to a bigger neighbour (&lt;12k)</td></tr>
+          <tr><td>Mali</td><td class="n">6,790</td><td>Export to a bigger neighbour (&lt;12k)</td></tr>
+          <tr><td>Malawi</td><td class="n">5,867</td><td>Export to a bigger neighbour (&lt;12k)</td></tr>
+          <tr><td>Rwanda</td><td class="n">5,111</td><td>Export to a bigger neighbour (&lt;12k)</td></tr>
+          <tr><td>Togo</td><td class="n">4,242</td><td>Export to a bigger neighbour (&lt;12k)</td></tr>
+          <tr><td>Burundi</td><td class="n">3,622</td><td>Export to a bigger neighbour (&lt;12k)</td></tr>
+          <tr><td>Benin</td><td class="n">3,482</td><td>Export to a bigger neighbour (&lt;12k)</td></tr>
+          <tr><td>Haiti</td><td class="n">2,807</td><td>Stuck — no viable option</td></tr>
+          <tr><td>Bhutan</td><td class="n">2,317</td><td>Export to a bigger neighbour (&lt;12k)</td></tr>
+          <tr><td>Mauritania</td><td class="n">1,400</td><td>Export to a bigger neighbour (&lt;12k)</td></tr>
+          <tr><td>Cambodia</td><td class="n">1,233</td><td>Export to a bigger neighbour (&lt;12k)</td></tr>
+          <tr><td>Chad</td><td class="n">897</td><td>Export to a bigger neighbour (&lt;12k)</td></tr>
+          <tr><td>Micronesia, Fed Sts</td><td class="n">269</td><td>Stuck — no viable option</td></tr>
+          <tr><td>Timor-Leste</td><td class="n">27</td><td>Stuck — no viable option</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="mut">Full data and code: <a href="https://github.com/lcrawfurd/ulab-recycling-scale">github.com/lcrawfurd/ulab-recycling-scale</a> (<code>data/ulab_volume_by_country.csv</code>, <code>data/country_status.csv</code>).</p>
+  </details>
 
   <footer>
     Volume estimates from the vehicle-demand model in Crawfurd, Mitchell &amp; Hu (2026), &ldquo;Beyond hotspots: estimating population lead exposure from battery recycling&rdquo;, <em>Environmental Pollution</em>. Safe-recycling scale thresholds from the USAID / Dalberg <em>ULAB Recycling Assessment</em> (2024) and a modular plant installed in C&ocirc;te d&rsquo;Ivoire (2024). Figures are exploratory and may change. Code and data: <a href="https://github.com/lcrawfurd/ulab-recycling-scale">github.com/lcrawfurd/ulab-recycling-scale</a>.
